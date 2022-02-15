@@ -1,4 +1,5 @@
-using WebApplication2.RepositoryAndService.core.CoreWithEntity;
+global using WebApplication2.RepositoryAndService.core.CoreWithEntity;
+global using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,12 +11,20 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 //DI repository
 builder.Services.AddScoped<EFCoreBrandRepository>();
+builder.Services.AddScoped<EFCoreProductRepository>();
 //connect to mysql db
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<DataContext>(options =>
+/*builder.Services.AddDbContext<DataContext>(options =>
 {
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
+*/
+//conect to sql express
+builder.Services.AddDbContext<DataContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
 
 var app = builder.Build();
 

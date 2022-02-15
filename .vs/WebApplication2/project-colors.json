@@ -5,7 +5,17 @@
       "ProjectGuid": "eceaa4d6-3564-4019-91ff-636f301aa960",
       "DisplayName": "WebApplication2",
       "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "8d5e698b-9bc6-448f-ad95-22bee9e905a1": {
+      "ProjectGuid": "8d5e698b-9bc6-448f-ad95-22bee9e905a1",
+      "DisplayName": "Solution Items",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

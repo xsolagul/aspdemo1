@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\WebApplication2",
+    "\\WebApplication2\\Controllers",
+    "\\WebApplication2\\Data",
+    "\\WebApplication2\\Migrations",
+    "\\WebApplication2\\Models",
+    "\\WebApplication2\\RepositoryAndService",
+    "\\WebApplication2\\RepositoryAndService\\core",
+    "\\WebApplication2\\RepositoryAndService\\core\\CoreWithEntity"
+  ],
+  "SelectedNode": "\\WebApplication2\\Controllers\\BaseController.cs",
+  "PreviewInSolutionExplorer": false
+}

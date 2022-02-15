@@ -9,6 +9,7 @@ namespace WebApplication2.Controllers
     public class BrandController : BaseController<Brand, EFCoreBrandRepository>
     {
         public BrandController(EFCoreBrandRepository repository): base(repository) { }
+        
     }
     /*public class BrandController : ControllerBase
     {

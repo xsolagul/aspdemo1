@@ -10,6 +10,7 @@
         public DateTime manufactureDate { get; set; }
         public string pathPic { get; set; }
         public int BrandId { get; set; }
-        public Brand Brand { get; set; }
+  
+        public  Brand? Brand { get; set; }
     }
 }

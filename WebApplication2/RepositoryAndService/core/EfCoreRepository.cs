@@ -10,14 +10,14 @@
         {
             this.context = context;
         }
-        public async Task<TEntity> add(TEntity entity)
+        public virtual async Task<TEntity> add(TEntity entity)
         {
             context.Set<TEntity>().Add(entity);
             await context.SaveChangesAsync();
             return entity;
         }
 
-        public async Task<TEntity> delete(int id)
+        public virtual async Task<TEntity> delete(int id)
         {
             var entity = await context.Set<TEntity>().FindAsync(id);
             if (entity == null)
@@ -31,17 +31,17 @@
             return entity;
         }
 
-        public async Task<TEntity> get(int id)
+        public virtual async Task<TEntity> get(int id)
         {
             return await context.Set<TEntity>().FindAsync(id);
         }
 
-        public async Task<List<TEntity>> getAll()
+        public virtual async Task<List<TEntity>> getAll()
         {
             return await context.Set<TEntity>().ToListAsync();
         }
 
-        public async Task<TEntity> update(TEntity entity)
+        public virtual async Task<TEntity> update(TEntity entity)
         {
             context.Entry(entity).State = EntityState.Modified;
             await context.SaveChangesAsync();

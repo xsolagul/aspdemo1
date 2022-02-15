@@ -5,9 +5,23 @@ namespace WebApplication2.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController : ControllerBase
+    public class ProductController : BaseController<Product, EFCoreProductRepository>
     {
-        private readonly DataContext _Context;
+        public ProductController(EFCoreProductRepository repository) : base(repository) { }
+        [HttpPut("/admin/Product/{id}")]
+        public override async Task<IActionResult> Put(int id, Product entity) {
+           return   await base.Put(id,entity);
+                }
+        [HttpGet("findbybrand/{brandId}")]
+        public async Task<ActionResult<List<Product>>> FindByBrand(int brandId)
+        {
+            var product = await repository.findByBrandId(brandId);
+            if (!product.Any())
+            { return NotFound(); }
+            return Ok(product);
+        }
+
+        /*private readonly DataContext _Context;
         public ProductController(DataContext context)
         {
             _Context = context;
@@ -15,7 +29,7 @@ namespace WebApplication2.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Product>>> Get()
         {
-            return Ok(await _Context.product.ToListAsync());
-        }
+            return Ok(await _Context.Product.ToListAsync());
+        }*/
     }
 }

@@ -28,7 +28,7 @@ namespace WebApplication2.Models
             var ent = await repository.get(id);
             if (ent == null)
             {
-                return NotFound("id not found");
+                return NotFound();
             }
             return ent;
         }

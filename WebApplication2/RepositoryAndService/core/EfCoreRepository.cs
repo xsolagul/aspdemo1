@@ -5,6 +5,7 @@
            where TEntity : class ,IEntity
         where TContext : DbContext
     {
+        //readonly ป้องกันการเปลี่ยนค่าของตัวแปร เปลี่ยนได้ผ่านconstructor อย่างเดียว
         protected readonly TContext context;
         public EfCoreRepository(TContext context)
         {
